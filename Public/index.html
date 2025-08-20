@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Instagram Private Audit – Web</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>Instagram Private Audit</h1>
+    <p class="sub">Anonim (login'siz) testler – yalnızca kendi içeriğiniz ve izinli hedefler için.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Hedef</h2>
+      <label>Reel/Post URL (ör. <code>https://www.instagram.com/reel/&lt;SHORTCODE&gt;/</code>)</label>
+      <input id="target" type="url" placeholder="https://www.instagram.com/reel/XXXXXX/" />
+      <div class="row">
+        <button id="runAll">Tüm Testleri Çalıştır</button>
+        <button id="clear">Temizle</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>İsteğe Bağlı Testler</h3>
+      <label>CDN Medya URL (mp4/jpg) – <small>yalnızca kendi içeriğinizden kopyalayın</small></label>
+      <input id="cdn" type="url" placeholder="https://scontent.cdninstagram.com/.../video.mp4"/>
+      <label>Kısa Kod Listesi (existence-oracle) – her satıra bir shortcode</label>
+      <textarea id="shortcodes" rows="4" placeholder="ABC12345
+DNeZ-GzsmIs"></textarea>
+      <button id="runOptional">İsteğe Bağlıları Çalıştır</button>
+    </section>
+
+    <section class="card">
+      <h2>Sonuçlar</h2>
+      <div id="results"></div>
+      <div class="row">
+        <button id="saveMd">Raporu Markdown indir</button>
+        <button id="saveJson">Raporu JSON indir</button>
+      </div>
+    </section>
+
+    <section class="card note">
+      <p><strong>Not:</strong> Bu araç brute-force yapmaz; yalnızca verdiğiniz URL/shortcode/CDN değerleri üzerinde login'siz denetimler uygular. Instagram Hizmet Şartları’na ve Meta Whitehat kurallarına uyunuz.</p>
+    </section>
+  </main>
+
+  <footer>
+    <small>© 2025 Audit Tool (for research/whitehat). No affiliation with Meta.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
